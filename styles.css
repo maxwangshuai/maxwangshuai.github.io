@@ -987,3 +987,52 @@ body {
     0% { transform: translateX(0) rotate(0deg); }
     100% { transform: translateX(-100px) rotate(180deg); }
 }
+
+/* 联系按钮样式 */
+.contact-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    color: white;
+    text-decoration: none;
+}
+
+.contact-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+
+/* 联系区域样式 */
+.contact-section {
+    padding: 80px 0;
+    background: var(--bg-secondary);
+}
+
+.contact-item {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-description {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
