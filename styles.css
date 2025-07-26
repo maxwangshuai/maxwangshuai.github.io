@@ -846,6 +846,35 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* 视频截图样式 */
+video.screenshot-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: #000;
+}
+
+/* 视频展示区域放大样式 */
+.video-showcase {
+    transform: scale(1.1);
+    z-index: 2;
+    margin: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* 禁用视频交互 */
+.video-showcase video {
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 /* Emoji装饰效果 */
 .emoji-decoration {
     position: absolute;
