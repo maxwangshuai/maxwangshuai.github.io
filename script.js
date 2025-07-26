@@ -592,6 +592,13 @@ function setLanguage(language) {
     
     // 更新截图路径
     updateScreenshotPaths(language);
+    
+    // 重新初始化自动主题切换复选框状态
+    const autoThemeToggle = document.getElementById('autoThemeToggle');
+    if (autoThemeToggle) {
+        const autoThemeEnabled = localStorage.getItem('autoTheme') !== 'false';
+        autoThemeToggle.checked = autoThemeEnabled;
+    }
 }
 
 // 根据语言更新App Store下载链接
