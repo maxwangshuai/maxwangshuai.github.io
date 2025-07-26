@@ -54,9 +54,10 @@
                         <div class="app-badges">
                             <span class="badge" data-i18n="tag-utility">工具</span>
                             <span class="badge" data-i18n="tag-sports">体育</span>
+                            <span class="badge" data-i18n="tag-activity">活动</span>
                         </div>
                         <div class="app-actions">
-                            <a href="https://apps.apple.com/app/%E5%9C%BA%E8%AE%B0%E6%9D%BF-pro-%E5%BD%B1%E8%A7%86%E6%8B%8D%E6%91%84%E5%BF%85%E5%A4%87/id6445955423" target="_blank" rel="noopener" class="btn btn-primary btn-large" data-i18n="download-appstore">App Store 下载</a>
+                            <a href="https://apps.apple.com/us/app/score-board-game-play-tacker/id6477260623?platform=iphone" target="_blank" rel="noopener" class="btn btn-primary btn-large" data-i18n="download-appstore">App Store 下载</a>
                             <!-- <a href="#" class="btn btn-secondary btn-large">Google Play 下载</a> -->
                         </div>
                     </div>
@@ -68,22 +69,71 @@
         <section class="app-screenshots">
             <div class="container">
                 <h2 class="section-title" data-i18n="app3-screenshots-title">应用截图</h2>
-                <div class="screenshots-grid">
-                    <div class="screenshot-item">
-                        <img src="images/screenshots/app3/zh/screenshot1.png" alt="简单记分" class="screenshot-img">
+                <div class="screenshot-carousel">
+                    <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="上一页">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="screenshot-container">
+                        <div class="screenshots-track" id="screenshotsTrack">
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app3/zh/0x0ss-1.png" alt="主界面" class="screenshot-img" data-i18n-alt="app3-screenshot-1" data-index="0">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app3/zh/0x0ss-2.png" alt="计分界面" class="screenshot-img" data-i18n-alt="app3-screenshot-2" data-index="1">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app3/zh/0x0ss-3.png" alt="计时功能" class="screenshot-img" data-i18n-alt="app3-screenshot-3" data-index="2">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app3/zh/0x0ss-4.png" alt="设置界面" class="screenshot-img" data-i18n-alt="app3-screenshot-4" data-index="3">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app3/zh/0x0ss-5.png" alt="主题选择" class="screenshot-img" data-i18n-alt="app3-screenshot-5" data-index="4">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app3/zh/0x0ss-6.png" alt="团队管理" class="screenshot-img" data-i18n-alt="app3-screenshot-6" data-index="5">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app3/zh/0x0ss-7.png" alt="比赛模式" class="screenshot-img" data-i18n-alt="app3-screenshot-7" data-index="6">
+                            </div>
+                        </div>
                     </div>
-                    <div class="screenshot-item">
-                        <img src="images/screenshots/app3/zh/screenshot2.png" alt="多选手支持" class="screenshot-img">
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="images/screenshots/app3/zh/screenshot3.png" alt="支持计时" class="screenshot-img">
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="images/screenshots/app3/zh/screenshot4.png" alt="多种主题" class="screenshot-img">
-                    </div>
+                    <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="下一页">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
+                <div class="carousel-indicators" id="carouselIndicators"></div>
             </div>
         </section>
+        
+        <!-- 图片放大模态框 -->
+        <div class="image-modal" id="imageModal">
+            <div class="modal-backdrop" id="modalBackdrop"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose" aria-label="关闭">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <img class="modal-image" id="modalImage" src="" alt="">
+                <div class="modal-nav">
+                    <button class="modal-nav-btn modal-prev" id="modalPrev" aria-label="上一张">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="modal-nav-btn modal-next" id="modalNext" aria-label="下一张">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
 
         <!-- 应用特性 -->
         <section class="app-features">
@@ -173,32 +223,39 @@
                 <h2 class="section-title" data-i18n="app3-updates-title">更新日志</h2>
                 <div class="update-timeline">
                     <div class="update-item">
-                        <div class="update-version" data-i18n="app3-version-latest">v1.3.0</div>
-                        <div class="update-date" data-i18n="app3-update-date-latest">2024年1月25日</div>
+                        <div class="update-version" data-i18n="app3-version-new">v1.1.0</div>
+                        <div class="update-date" data-i18n="app3-update-date-new">2025年7月24日</div>
                         <div class="update-content">
-                            <h4 data-i18n="app3-update-title-latest">重要更新</h4>
+                            <h4 data-i18n="app3-update-title-new">功能更新</h4>
                             <ul>
-                                <li data-i18n="app3-update-1">新增6人比赛模式</li>
-                                <li data-i18n="app3-update-2">优化计时器精度</li>
-                                <li data-i18n="app3-update-3">增加比赛历史记录</li>
-                                <li data-i18n="app3-update-4">支持自定义选手名称</li>
-                                <li data-i18n="app3-update-5">修复已知显示问题</li>
+                                <li data-i18n="app3-update-new-1">计时器功能：新增计时器功能，支持倒计时和秒表模式</li>
+                                <li data-i18n="app3-update-new-2">触觉反馈：增加触觉反馈以提升用户体验</li>
+                                <li data-i18n="app3-update-new-3">体验优化：优化界面交互，提供更好的产品体验</li>
                             </ul>
                         </div>
                     </div>
                     <div class="update-item">
-                        <div class="update-version" data-i18n="app3-version-prev">v1.2.0</div>
-                        <div class="update-date" data-i18n="app3-update-date-prev">2023年12月20日</div>
+                        <div class="update-version" data-i18n="app3-version-102">v1.0.2</div>
+                        <div class="update-date" data-i18n="app3-update-date-102">2025年5月28日</div>
                         <div class="update-content">
-                            <h4 data-i18n="app3-update-title-prev">功能增强</h4>
+                            <h4 data-i18n="app3-update-title-102">用户体验优化</h4>
                             <ul>
-                                <li data-i18n="app3-update-prev-1">改进记分界面设计</li>
-                                <li data-i18n="app3-update-prev-2">新增多种主题选择</li>
-                                <li data-i18n="app3-update-prev-3">优化应用性能</li>
-                                <li data-i18n="app3-update-prev-4">增加计时器功能</li>
+                                <li data-i18n="app3-update-102-1">优化用户体验</li>
+                                <li data-i18n="app3-update-102-2">应用主题颜色</li>
                             </ul>
                         </div>
                     </div>
+                    <div class="update-item">
+                        <div class="update-version" data-i18n="app3-version-101">v1.0.1</div>
+                        <div class="update-date" data-i18n="app3-update-date-101">2024年2月19日</div>
+                        <div class="update-content">
+                            <h4 data-i18n="app3-update-title-101">问题修复</h4>
+                            <ul>
+                                <li data-i18n="app3-update-101-1">修复了一些错误，兼容性更好</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>

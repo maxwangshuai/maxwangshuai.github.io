@@ -221,6 +221,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化截图轮播和模态框
     initializeScreenshotCarousel();
     initializeImageModal();
+    
+    // 为App3页面初始化截图功能
+    if (window.location.pathname.includes('app3.html')) {
+        initializeApp3Screenshots();
+    }
 });
 
 // 截图轮播功能
@@ -276,6 +281,7 @@ function initializeScreenshotCarousel() {
     function updateIndicators() {
         if (!indicatorsContainer) return;
         
+        // 计算总页数，确保最后一页能显示剩余的图片
         const totalPages = Math.ceil(totalItems / itemsPerView);
         const currentPage = Math.floor(currentIndex / itemsPerView);
         
@@ -290,6 +296,13 @@ function initializeScreenshotCarousel() {
                 updateCarousel();
             });
             indicatorsContainer.appendChild(indicator);
+        }
+        
+        // 如果只有一页，隐藏指示器
+        if (totalPages <= 1) {
+            indicatorsContainer.style.display = 'none';
+        } else {
+            indicatorsContainer.style.display = 'flex';
         }
     }
     
@@ -623,8 +636,8 @@ function getTranslations() {
             'tag-lifestyle': '生活方式',
             'tag-desktop': '桌面工具',
             'tag-sports': '体育',
+            'tag-activity': '活动',
             'tag-utility': '实用工具',
-            'tag-sports': '体育',
             'tag-coming-soon': '敬请期待',
             // 关于开发者
             'about-description-1': '🚀 我是一名专注于生活方式、效率工具和影视摄影领域的独立开发者，致力于通过技术提升人们的生活品质和工作效率。',
@@ -718,6 +731,23 @@ function getTranslations() {
             'app3-screenshot-2': '多选手支持',
             'app3-screenshot-3': '支持计时',
             'app3-screenshot-4': '多种主题',
+            'app3-screenshot-5': '自定义团队名称',
+            'app3-screenshot-6': '分数重置功能',
+            'app3-screenshot-7': '屏幕镜像显示',
+            'app3-screenshot-1-title': '简单记分',
+            'app3-screenshot-1-desc': '清晰直观的计分界面，支持多人同时记分，操作简单便捷',
+            'app3-screenshot-2-title': '多选手支持',
+            'app3-screenshot-2-desc': '支持2-6名选手同时参与，灵活适应各种比赛场景',
+            'app3-screenshot-3-title': '支持计时',
+            'app3-screenshot-3-desc': '内置计时器功能，支持倒计时和正计时，精确控制比赛时间',
+            'app3-screenshot-4-title': '多种主题',
+            'app3-screenshot-4-desc': '丰富的主题选择，个性化定制界面风格，适应不同使用场景',
+            'app3-screenshot-5-title': '自定义团队名称',
+            'app3-screenshot-5-desc': '轻松编辑团队名称，个性化标识每个参赛者或团队',
+            'app3-screenshot-6-title': '分数重置功能',
+            'app3-screenshot-6-desc': '一键重置所有分数，快速开始新的比赛或游戏',
+            'app3-screenshot-7-title': '屏幕镜像显示',
+            'app3-screenshot-7-desc': '支持iOS镜像功能，将计分板投射到大屏幕，方便观众观看',
             'app3-features-title': '应用特色',
             'app3-feature1-title': '得分调整功能',
             'app3-feature1-desc': '通过简单的"+"和"-"按钮调整分数，支持自定义分数增减量以适应不同游戏规则。',
@@ -745,21 +775,22 @@ function getTranslations() {
             'app3-highlight-6': '主题选择：多种主题风格，适应不同活动需求',
             'app3-highlight-7': '屏幕镜像：支持iOS镜像功能，实时投屏到大屏幕',
             'app3-updates-title': '更新日志',
-            'app3-version-latest': 'v1.3.0',
-            'app3-update-date-latest': '2024年1月25日',
-            'app3-update-title-latest': '重要更新',
-            'app3-update-1': '新增6人比赛模式',
-            'app3-update-2': '优化计时器精度',
-            'app3-update-3': '增加比赛历史记录',
-            'app3-update-4': '支持自定义选手名称',
-            'app3-update-5': '修复已知显示问题',
-            'app3-version-prev': 'v1.2.0',
-            'app3-update-date-prev': '2023年12月20日',
-            'app3-update-title-prev': '功能增强',
-            'app3-update-prev-1': '改进记分界面设计',
-            'app3-update-prev-2': '新增多种主题选择',
-            'app3-update-prev-3': '优化应用性能',
-            'app3-update-prev-4': '增加计时器功能'
+            'app3-version-new': 'v1.1.0',
+            'app3-update-date-new': '2025年7月24日',
+            'app3-update-title-new': '功能更新',
+            'app3-update-new-1': '计时器功能：新增计时器功能，支持倒计时和秒表模式',
+            'app3-update-new-2': '触觉反馈：增加触觉反馈以提升用户体验',
+            'app3-update-new-3': '体验优化：优化界面交互，提供更好的产品体验',
+            'app3-version-102': 'v1.0.2',
+            'app3-update-date-102': '2025年5月28日',
+            'app3-update-title-102': '用户体验优化',
+            'app3-update-102-1': '优化用户体验',
+            'app3-update-102-2': '应用主题颜色',
+            'app3-version-101': 'v1.0.1',
+            'app3-update-date-101': '2024年2月19日',
+            'app3-update-title-101': '问题修复',
+            'app3-update-101-1': '修复了一些错误，兼容性更好',
+
         },
         en: {
             'page-title': 'Snail\'s Growth Tools',
@@ -794,6 +825,7 @@ function getTranslations() {
             'tag-lifestyle': 'Lifestyle',
             'tag-desktop': 'Desktop',
             'tag-sports': 'Sports',
+            'tag-activity': 'Activity',
             'tag-utility': 'Utility',
             'tag-coming-soon': 'Coming Soon',
             // About developer
@@ -888,6 +920,23 @@ function getTranslations() {
             'app3-screenshot-2': 'Multi-Player Support',
             'app3-screenshot-3': 'Timer Support',
             'app3-screenshot-4': 'Multiple Themes',
+            'app3-screenshot-5': 'Custom Team Names',
+            'app3-screenshot-6': 'Score Reset Function',
+            'app3-screenshot-7': 'Screen Mirroring Display',
+            'app3-screenshot-1-title': 'Simple Scoring',
+            'app3-screenshot-1-desc': 'Clear and intuitive scoring interface, supports multiple players scoring simultaneously, easy to operate',
+            'app3-screenshot-2-title': 'Multi-Player Support',
+            'app3-screenshot-2-desc': 'Supports 2-6 players simultaneously, flexibly adapts to various competition scenarios',
+            'app3-screenshot-3-title': 'Timer Support',
+            'app3-screenshot-3-desc': 'Built-in timer function, supports countdown and count-up modes, precise control of game time',
+            'app3-screenshot-4-title': 'Multiple Themes',
+            'app3-screenshot-4-desc': 'Rich theme selection, personalized interface customization, adapts to different usage scenarios',
+            'app3-screenshot-5-title': 'Custom Team Names',
+            'app3-screenshot-5-desc': 'Easily edit team names, personalized identification for each participant or team',
+            'app3-screenshot-6-title': 'Score Reset Function',
+            'app3-screenshot-6-desc': 'One-click reset of all scores, quickly start new games or competitions',
+            'app3-screenshot-7-title': 'Screen Mirroring Display',
+            'app3-screenshot-7-desc': 'Supports iOS mirroring function, project scoreboard to large screen for audience viewing',
             'app3-features-title': 'App Features',
             'app3-feature1-title': 'Score Adjustment Function',
             'app3-feature1-desc': 'Adjust scores through simple "+" and "-" buttons, supports custom score increments to adapt to different game rules.',
@@ -915,21 +964,22 @@ function getTranslations() {
             'app3-highlight-6': 'Theme Selection: Multiple theme styles to suit different activity needs',
             'app3-highlight-7': 'Screen Mirroring: iOS mirroring support for real-time display on large screens',
             'app3-updates-title': 'Update Log',
-            'app3-version-latest': 'v1.3.0',
-            'app3-update-date-latest': 'January 25, 2024',
-            'app3-update-title-latest': 'Important Update',
-            'app3-update-1': 'Added 6-player competition mode',
-            'app3-update-2': 'Optimized timer precision',
-            'app3-update-3': 'Added competition history records',
-            'app3-update-4': 'Support for custom player names',
-            'app3-update-5': 'Fixed known display issues',
-            'app3-version-prev': 'v1.2.0',
-            'app3-update-date-prev': 'December 20, 2023',
-            'app3-update-title-prev': 'Feature Enhancement',
-            'app3-update-prev-1': 'Improved scoring interface design',
-            'app3-update-prev-2': 'Added multiple theme choices',
-            'app3-update-prev-3': 'Optimized app performance',
-            'app3-update-prev-4': 'Added timer function'
+            'app3-version-new': 'v1.1.0',
+            'app3-update-date-new': 'Jul 24, 2025',
+            'app3-update-title-new': 'Feature Update',
+            'app3-update-new-1': 'Timer Function: Added timer function, supporting countdown and stopwatch modes',
+            'app3-update-new-2': 'Haptic Feedback: Added haptic feedback to enhance user experience',
+            'app3-update-new-3': 'Experience Optimization: Optimized interface interaction for better product experience',
+            'app3-version-102': 'v1.0.2',
+            'app3-update-date-102': 'May 28, 2025',
+            'app3-update-title-102': 'User Experience Optimization',
+            'app3-update-102-1': 'Optimize User Experience',
+            'app3-update-102-2': 'Apply Theme Colors',
+            'app3-version-101': 'v1.0.1',
+            'app3-update-date-101': 'Feb 19, 2024',
+            'app3-update-title-101': 'Bug Fixes',
+            'app3-update-101-1': 'Some bugs have been fixed and compatibility is better',
+
         }
     };
 }
@@ -978,5 +1028,207 @@ function initLogoAnimation() {
         });
     } else {
         console.error('找不到logo元素:', { brandLogo, logoVideo });
+    }
+}
+
+// App3截图功能初始化
+function initializeApp3Screenshots() {
+    const carousel = document.querySelector('.screenshot-carousel');
+    if (!carousel) return;
+    
+    const track = document.getElementById('screenshotsTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const indicatorsContainer = document.getElementById('carouselIndicators');
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+    const modalBackdrop = document.getElementById('modalBackdrop');
+    const modalPrev = document.getElementById('modalPrev');
+    const modalNext = document.getElementById('modalNext');
+    
+    if (!track || !prevBtn || !nextBtn) return;
+    
+    let currentIndex = 0;
+    let itemsPerView = 5; // App3默认显示5张图片
+    let totalItems = 0;
+    let maxIndex = 0;
+    let currentImageIndex = 0;
+    let allImages = [];
+    
+    function updateItemsPerView() {
+        const screenWidth = window.innerWidth;
+        if (screenWidth <= 480) {
+            itemsPerView = 1;
+        } else if (screenWidth <= 768) {
+            itemsPerView = 2;
+        } else if (screenWidth <= 1024) {
+            itemsPerView = 3;
+        } else if (screenWidth <= 1920) {
+            itemsPerView = 4; // 2K及以下分辨率显示4张，确保能滑动看到所有7张
+        } else {
+            itemsPerView = 5; // 超大屏幕显示5张
+        }
+    }
+    
+    function updateCarousel() {
+        const items = track.querySelectorAll('.screenshot-item');
+        totalItems = items.length;
+        maxIndex = Math.max(0, totalItems - itemsPerView);
+        
+        if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+        }
+        
+        const translateX = -(currentIndex * (100 / itemsPerView));
+        track.style.transform = `translateX(${translateX}%)`;
+        
+
+        
+        // 更新按钮状态
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
+        
+        // 更新指示器
+        updateIndicators();
+    }
+    
+    function updateIndicators() {
+        if (!indicatorsContainer) return;
+        
+        const totalPages = Math.ceil(totalItems / itemsPerView);
+        const currentPage = Math.floor(currentIndex / itemsPerView);
+        
+        indicatorsContainer.innerHTML = '';
+        
+        for (let i = 0; i < totalPages; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = `indicator ${i === currentPage ? 'active' : ''}`;
+            indicator.addEventListener('click', () => {
+                currentIndex = i * itemsPerView;
+                if (currentIndex > maxIndex) currentIndex = maxIndex;
+                updateCarousel();
+            });
+            indicatorsContainer.appendChild(indicator);
+        }
+    }
+    
+    function goToPrev() {
+        if (currentIndex > 0) {
+            currentIndex = Math.max(0, currentIndex - 1);
+            updateCarousel();
+        }
+    }
+    
+    function goToNext() {
+        if (currentIndex < maxIndex) {
+            currentIndex = Math.min(maxIndex, currentIndex + 1);
+            updateCarousel();
+        }
+    }
+    
+
+    
+    // 图片模态框功能
+    function updateImageList() {
+        allImages = Array.from(document.querySelectorAll('.screenshot-img'));
+    }
+    
+    function openModal(imageSrc, imageIndex) {
+        updateImageList();
+        currentImageIndex = imageIndex;
+        modalImage.src = imageSrc;
+        modalImage.alt = allImages[imageIndex]?.alt || '';
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // 更新导航按钮状态
+        if (modalPrev) modalPrev.style.display = currentImageIndex > 0 ? 'flex' : 'none';
+        if (modalNext) modalNext.style.display = currentImageIndex < allImages.length - 1 ? 'flex' : 'none';
+    }
+    
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    function showPrevImage() {
+        if (currentImageIndex > 0) {
+            currentImageIndex--;
+            modalImage.src = allImages[currentImageIndex].src;
+            modalImage.alt = allImages[currentImageIndex].alt;
+            
+            // 更新导航按钮状态
+            if (modalPrev) modalPrev.style.display = currentImageIndex > 0 ? 'flex' : 'none';
+            if (modalNext) modalNext.style.display = 'flex';
+        }
+    }
+    
+    function showNextImage() {
+        if (currentImageIndex < allImages.length - 1) {
+            currentImageIndex++;
+            modalImage.src = allImages[currentImageIndex].src;
+            modalImage.alt = allImages[currentImageIndex].alt;
+            
+            // 更新导航按钮状态
+            if (modalPrev) modalPrev.style.display = 'flex';
+            if (modalNext) modalNext.style.display = currentImageIndex < allImages.length - 1 ? 'flex' : 'none';
+        }
+    }
+    
+    // 为所有截图添加点击事件
+    function attachImageClickEvents() {
+        updateImageList();
+        allImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                openModal(img.src, index);
+            });
+            img.style.cursor = 'pointer';
+        });
+    }
+    
+    // 事件监听
+    prevBtn.addEventListener('click', goToPrev);
+    nextBtn.addEventListener('click', goToNext);
+    
+    // 模态框事件
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+    if (modalPrev) modalPrev.addEventListener('click', showPrevImage);
+    if (modalNext) modalNext.addEventListener('click', showNextImage);
+    
+    // 键盘事件
+    document.addEventListener('keydown', (e) => {
+        if (modal && modal.classList.contains('active')) {
+            if (e.key === 'Escape') {
+                closeModal();
+            } else if (e.key === 'ArrowLeft') {
+                showPrevImage();
+            } else if (e.key === 'ArrowRight') {
+                showNextImage();
+            }
+        }
+    });
+    
+    // 响应式更新
+    window.addEventListener('resize', () => {
+        updateItemsPerView();
+        updateCarousel();
+    });
+    
+    // 初始化
+    updateItemsPerView();
+    updateCarousel();
+    attachImageClickEvents();
+    
+    // 监听语言切换，重新计算可见项目
+    const languageSelector = document.getElementById('languageSelector');
+    if (languageSelector) {
+        languageSelector.addEventListener('change', () => {
+            setTimeout(() => {
+                updateCarousel();
+                attachImageClickEvents();
+            }, 100);
+        });
     }
 }
