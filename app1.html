@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app1-detail-title">场记板 Pro - 详细介绍</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="app-detail.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <img src="images/Logo/logo_128.png" alt="蜗牛的成长工具 Logo" class="logo-image">
+                    <video class="logo-video" muted loop preload="metadata" playsinline webkit-playsinline>
+                        <source src="images/Logo/logovideo_480.mov" type="video/quicktime">
+                        <source src="images/Logo/logovideo_480.mov" type="video/mp4">
+                        <!-- 如果视频无法播放，显示静态图片 -->
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+                <h1><a href="index.html" data-i18n="nav-brand">蜗牛的成长工具</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" data-i18n="nav-home">首页</a></li>
+                <li><a href="index.html#apps" data-i18n="nav-apps">我的应用</a></li>
+                <li><a href="index.html#about" data-i18n="nav-about">关于我</a></li>
+                <li><a href="index.html#contact" data-i18n="nav-contact">联系方式</a></li>
+            </ul>
+            <div class="nav-controls">
+                <select class="language-selector" id="languageSelector" aria-label="选择语言">
+                    <option value="zh" data-flag="🇨🇳">中文</option>
+                    <option value="en" data-flag="🇺🇸">English</option>
+                </select>
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="app-detail-main">
+        <!-- 应用头部信息 -->
+        <section class="app-hero">
+            <div class="container">
+                <div class="app-hero-content">
+                    <div class="app-icon-large">
+                        <img src="images/icons/app1-icon.png" alt="场记板 Pro" class="app-icon-large-img">
+                    </div>
+                    <div class="app-meta">
+                        <h1 class="app-name" data-i18n="app1-title">场记板 Pro</h1>
+                        <p class="app-tagline" data-i18n="app1-subtitle">影视拍摄必备工具</p>
+                        <div class="app-badges">
+                            <span class="badge" data-i18n="tag-filmmaking">影视制作</span>
+                            <span class="badge" data-i18n="tag-productivity">效率工具</span>
+                            <span class="badge" data-i18n="badge-pro">专业版</span>
+                        </div>
+                        <div class="app-actions">
+                            <a href="https://apps.apple.com/app/%E5%9C%BA%E8%AE%B0%E6%9D%BF-pro-%E5%BD%B1%E8%A7%86%E6%8B%8D%E6%91%84%E5%BF%85%E5%A4%87/id6445955423" target="_blank" rel="noopener" class="btn btn-primary btn-large" data-i18n="download-appstore">App Store 下载</a>
+                            <!-- <a href="#" class="btn btn-secondary btn-large">Google Play 下载</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 应用截图 -->
+        <section class="app-screenshots">
+            <div class="container">
+                <h2 class="section-title" data-i18n="screenshots-title">应用截图</h2>
+                <div class="screenshot-carousel">
+                    <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="上一页">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="screenshot-container">
+                        <div class="screenshots-track" id="screenshotsTrack">
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app1/zh/0x0ss-1.png" alt="场记板 Pro 主界面" class="screenshot-img" data-index="0">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app1/zh/0x0ss-2.png" alt="场记板 Pro 功能页面" class="screenshot-img" data-index="1">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app1/zh/0x0ss-3.png" alt="场记板 Pro 设置页面" class="screenshot-img" data-index="2">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app1/zh/0x0ss-4.png" alt="场记板 Pro 详情页面" class="screenshot-img" data-index="3">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app1/zh/0x0ss-5.png" alt="场记板 Pro 界面5" class="screenshot-img" data-index="4">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app1/zh/0x0ss-6.png" alt="场记板 Pro 界面6" class="screenshot-img" data-index="5">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app1/zh/0x0ss-7.png" alt="场记板 Pro 界面7" class="screenshot-img" data-index="6">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app1/zh/0x0ss-8.png" alt="场记板 Pro 界面8" class="screenshot-img" data-index="7">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="images/screenshots/app1/zh/0x0ss-9.png" alt="场记板 Pro 界面9" class="screenshot-img" data-index="8">
+                            </div>
+                            <div class="screenshot-item" id="screenshot-10" style="display: none;">
+                                <img src="images/screenshots/app1/en/0x0ss-10.png" alt="场记板 Pro 界面10" class="screenshot-img" data-index="9">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="下一页">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="carousel-indicators" id="carouselIndicators"></div>
+            </div>
+        </section>
+        
+        <!-- 图片放大模态框 -->
+        <div class="image-modal" id="imageModal">
+            <div class="modal-backdrop" id="modalBackdrop"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose" aria-label="关闭">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <img class="modal-image" id="modalImage" src="" alt="">
+                <div class="modal-nav">
+                    <button class="modal-nav-btn modal-prev" id="modalPrev" aria-label="上一张">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="modal-nav-btn modal-next" id="modalNext" aria-label="下一张">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 应用特性 -->
+        <section class="app-features">
+            <div class="container">
+                <h2 class="section-title" data-i18n="features-title">主要特性</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎬</div>
+                        <h3 data-i18n="feature1-title">多种样式选择</h3>
+                        <p data-i18n="feature1-desc">提供六种不同的场记板样式，适应不同拍摄需求和场景。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👆</div>
+                        <h3 data-i18n="feature2-title">便捷打板操作</h3>
+                        <p data-i18n="feature2-desc">支持点击板头或摇晃设备快速打板，操作简单直观。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⏱️</div>
+                        <h3 data-i18n="feature3-title">自动计时功能</h3>
+                        <p data-i18n="feature3-desc">具有自动计时器功能，确保您的时间记录准确无误。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📋</div>
+                        <h3 data-i18n="feature4-title">场记单管理</h3>
+                        <p data-i18n="feature4-desc">打板完成后自动整理信息到场记单，支持PDF导出和打印分享。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 应用描述 -->
+        <section class="app-description">
+            <div class="container">
+                <div class="description-content">
+                    <div class="description-text">
+                        <h2 data-i18n="about-app-title">关于这个应用</h2>
+                        <p data-i18n="about-app-desc1">这是一款专为提高工作效率而设计的移动应用。通过简洁直观的界面和强大的功能，帮助用户更好地管理日常任务和项目。</p>
+                        <p data-i18n="about-app-desc2">应用采用了最新的技术栈开发，确保在各种设备上都能提供流畅的使用体验。无论您是学生、职场人士还是创业者，这款应用都能成为您的得力助手。</p>
+                        
+                        <h3 data-i18n="main-features-title">主要功能包括：</h3>
+                        <ul class="feature-list">
+                            <li data-i18n="feature-list-1">任务管理和项目规划</li>
+                            <li data-i18n="feature-list-2">智能提醒和通知系统</li>
+                            <li data-i18n="feature-list-3">数据统计和分析报告</li>
+                            <li data-i18n="feature-list-4">团队协作和分享功能</li>
+                            <li data-i18n="feature-list-5">自定义主题和个性化设置</li>
+                        </ul>
+                    </div>
+                    <!-- <div class="description-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">10K+</div>
+                            <div class="stat-label">活跃用户</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.8</div>
+                            <div class="stat-label">用户评分</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">五星评价</div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 版本历史 -->
+        <section class="app-updates">
+            <div class="container">
+                <h2 class="section-title" data-i18n="updates-title">最新更新</h2>
+                <div class="update-timeline">
+                    <div class="update-item">
+                        <div class="update-version">v1.2.0</div>
+                        <div class="update-date">2024年3月</div>
+                        <div class="update-content">
+                            <h4 data-i18n="update-v120-title">场记功能更新</h4>
+                            <p data-i18n="update-v120-desc">更新了场记单功能，你可以编辑场记信息、打印和导出PDF，支持了iCloud设备信息同步（内购）。</p>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-version">v1.1.2</div>
+                        <div class="update-date">2024年2月</div>
+                        <div class="update-content">
+                            <h4 data-i18n="update-v112-title">输入优化</h4>
+                            <p data-i18n="update-v112-desc">优化了输入的问题。</p>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-version">v1.1.1</div>
+                        <div class="update-date">2024年1月</div>
+                        <div class="update-content">
+                            <h4 data-i18n="update-v111-title">帧率设置优化</h4>
+                            <p data-i18n="update-v111-desc">- 添加了帧率的设置项目，确保打板和音效同步，快去试试吧！</p>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-version">v1.1.0</div>
+                        <div class="update-date">2023年5月</div>
+                        <div class="update-content">
+                            <h4 data-i18n="update-v110-title">音效和反馈优化</h4>
+                            <p data-i18n="update-v110-desc1">- 添加了更多音频效果。</p>
+                            <p data-i18n="update-v110-desc2">- 欢迎您的建议和反馈。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p data-i18n="footer-copyright">&copy; 2025 蜗牛的成长工具. 保留所有权利.</p>
+                <p class="icp-info">
+                    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">陕ICP备2024041843号-1A</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherPro - 精准天气预报应用</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="app-detail.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <h2>蜗牛的成长工具</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">首页</a></li>
+                <li><a href="index.html#apps">应用</a></li>
+                <li><a href="index.html#about">关于</a></li>
+            </ul>
+            <div class="nav-controls">
+                <select class="language-selector" id="languageSelector" aria-label="选择语言">
+                    <option value="zh" data-flag="🇨🇳">中文</option>
+                    <option value="en" data-flag="🇺🇸">English</option>
+                </select>
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="app-detail-main">
+        <div class="container">
+            <!-- 应用头部信息 -->
+            <div class="app-header">
+                <div class="app-icon-large">
+                    <div class="icon-placeholder-detail">🌤️</div>
+                </div>
+                <div class="app-header-info">
+                    <h1 class="app-detail-title">WeatherPro</h1>
+                    <p class="app-detail-subtitle">精准天气预报应用</p>
+                    <div class="app-download">
+                        <a href="#" class="download-btn">📱 App Store 下载</a>
+                        <!-- <a href="#" class="download-btn secondary">🤖 Google Play 下载</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 应用截图 -->
+            <section class="app-screenshots">
+                <h2>应用截图</h2>
+                <div class="screenshots-grid">
+                    <div class="screenshot-item">
+                        <div class="screenshot-placeholder">🌤️ 主界面</div>
+                    </div>
+                    <div class="screenshot-item">
+                        <div class="screenshot-placeholder">📊 详细数据</div>
+                    </div>
+                    <div class="screenshot-item">
+                        <div class="screenshot-placeholder">🗺️ 天气地图</div>
+                    </div>
+                    <div class="screenshot-item">
+                        <div class="screenshot-placeholder">⚠️ 预警通知</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 主要特性 -->
+            <section class="app-features">
+                <h2>主要特性</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <h3>精准预报</h3>
+                        <p>采用多源数据融合技术，提供精确到小时的天气预报</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🗺️</div>
+                        <h3>天气地图</h3>
+                        <p>实时雷达图、卫星云图、降水分布，直观了解天气变化</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚠️</div>
+                        <h3>灾害预警</h3>
+                        <p>及时推送台风、暴雨、高温等极端天气预警信息</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌡️</div>
+                        <h3>生活指数</h3>
+                        <p>穿衣、运动、洗车、紫外线等生活指数，贴心生活助手</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📍</div>
+                        <h3>多地管理</h3>
+                        <p>支持添加多个关注城市，随时查看各地天气情况</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <h3>个性化界面</h3>
+                        <p>多种主题风格，动态天气背景，打造专属天气应用</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 详细描述 -->
+            <section class="app-description">
+                <div class="description-content">
+                    <div class="description-text">
+                        <h2>关于 WeatherPro</h2>
+                        <p>WeatherPro 是一款专业的天气预报应用，致力于为用户提供最准确、最及时的天气信息和生活建议。</p>
+                        
+                        <h3>数据来源</h3>
+                        <ul class="feature-list">
+                            <li>国家气象局：权威官方数据，保证预报准确性</li>
+                            <li>全球气象站：覆盖全球的气象观测网络</li>
+                            <li>卫星数据：实时卫星云图和气象卫星数据</li>
+                            <li>雷达监测：多普勒雷达实时降水监测</li>
+                            <li>AI算法：机器学习优化预报精度</li>
+                            <li>用户反馈：众包天气数据，提升本地化准确度</li>
+                        </ul>
+                        
+                        <h3>专业功能</h3>
+                        <p>WeatherPro 不仅是天气查询工具，更是您的生活助手：</p>
+                        <ul class="feature-list">
+                            <li>分钟级降水预报：精确到分钟的降水开始和结束时间</li>
+                            <li>空气质量监测：PM2.5、PM10、臭氧等污染物实时数据</li>
+                            <li>过敏指数：花粉浓度预报，过敏人群贴心提醒</li>
+                            <li>农业气象：为农业生产提供专业气象服务</li>
+                            <li>海洋天气：潮汐、海浪、海温等海洋气象信息</li>
+                            <li>历史天气：查询任意日期的历史天气数据</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- <div class="description-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">1M+</div>
+                            <div class="stat-label">活跃用户</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.8</div>
+                            <div class="stat-label">用户评分</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">预报准确率</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">覆盖国家</div>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+
+            <!-- 版本更新 -->
+            <section class="app-updates">
+                <h2>版本更新</h2>
+                <div class="updates-list">
+                    <div class="update-item">
+                        <div class="update-date">2024年2月1日</div>
+                        <div class="update-content">
+                            <h4>版本 6.1.0</h4>
+                            <ul>
+                                <li>新增分钟级降水预报功能</li>
+                                <li>优化天气地图显示效果</li>
+                                <li>增加空气质量历史趋势</li>
+                                <li>支持Apple Watch Series 9</li>
+                                <li>修复iOS 17兼容性问题</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">2023年12月30日</div>
+                        <div class="update-content">
+                            <h4>版本 6.0.0</h4>
+                            <ul>
+                                <li>全新设计的用户界面</li>
+                                <li>新增动态天气背景</li>
+                                <li>支持语音天气播报</li>
+                                <li>增加农业气象服务</li>
+                                <li>优化预警推送机制</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">2023年11月20日</div>
+                        <div class="update-content">
+                            <h4>版本 5.9.0</h4>
+                            <ul>
+                                <li>新增过敏指数预报</li>
+                                <li>支持多语言界面</li>
+                                <li>优化数据加载速度</li>
+                                <li>增加小组件自定义选项</li>
+                                <li>修复定位偏差问题</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 个人开发者作品集. 保留所有权利.</p>
+            <p><a href="#" class="footer-link">京ICP备12345678号-1</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

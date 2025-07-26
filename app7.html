@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicMaker - 移动音乐创作工具</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="app-detail.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <h2>蜗牛的成长工具</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">首页</a></li>
+                <li><a href="index.html#apps">应用</a></li>
+                <li><a href="index.html#about">关于</a></li>
+            </ul>
+            <div class="nav-controls">
+                <select class="language-selector" id="languageSelector" aria-label="选择语言">
+                    <option value="zh" data-flag="🇨🇳">中文</option>
+                    <option value="en" data-flag="🇺🇸">English</option>
+                </select>
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="app-detail-main">
+        <div class="container">
+            <!-- 应用头部信息 -->
+            <div class="app-header">
+                <div class="app-icon-large">
+                    <div class="icon-placeholder-detail">🎵</div>
+                </div>
+                <div class="app-header-info">
+                    <h1 class="app-detail-title">MusicMaker</h1>
+                    <p class="app-detail-subtitle">移动音乐创作工具</p>
+                    <div class="app-download">
+                        <a href="#" class="download-btn">📱 App Store 下载</a>
+                        <!-- <a href="#" class="download-btn secondary">🤖 Google Play 下载</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 应用截图 -->
+            <section class="app-screenshots">
+                <h2>应用截图</h2>
+                <div class="screenshots-grid">
+                    <div class="screenshot-item">
+                        <div class="screenshot-placeholder">🎹 创作界面</div>
+                    </div>
+                    <div class="screenshot-item">
+                        <div class="screenshot-placeholder">🎛️ 混音台</div>
+                    </div>
+                    <div class="screenshot-item">
+                        <div class="screenshot-placeholder">🎼 乐谱编辑</div>
+                    </div>
+                    <div class="screenshot-item">
+                        <div class="screenshot-placeholder">🎧 音效库</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 主要特性 -->
+            <section class="app-features">
+                <h2>主要特性</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎹</div>
+                        <h3>多轨录制</h3>
+                        <p>支持多达32轨同时录制，专业级音频处理，打造完美音质</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎛️</div>
+                        <h3>虚拟乐器</h3>
+                        <p>内置钢琴、吉他、鼓组等多种虚拟乐器，音色逼真</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎧</div>
+                        <h3>音效处理</h3>
+                        <p>丰富的音效插件，包括混响、延迟、压缩器等专业效果</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎼</div>
+                        <h3>MIDI编辑</h3>
+                        <p>强大的MIDI编辑器，支持音符编辑、力度调节、时间量化</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎵</div>
+                        <h3>智能作曲</h3>
+                        <p>AI辅助作曲功能，根据风格自动生成旋律和和弦进行</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📤</div>
+                        <h3>分享导出</h3>
+                        <p>支持多种音频格式导出，一键分享到社交平台</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 详细描述 -->
+            <section class="app-description">
+                <div class="description-content">
+                    <div class="description-text">
+                        <h2>关于 MusicMaker</h2>
+                        <p>MusicMaker 是一款专为移动设备设计的音乐创作应用，让每个人都能轻松创作出专业水准的音乐作品。</p>
+                        
+                        <h3>创作工具</h3>
+                        <ul class="feature-list">
+                            <li>多轨录音：支持同时录制多个音轨，实现复杂编曲</li>
+                            <li>虚拟键盘：全尺寸88键钢琴，支持力度感应</li>
+                            <li>鼓机：内置多种鼓组，支持自定义节拍模式</li>
+                            <li>吉他模拟：真实的吉他音色，支持各种演奏技巧</li>
+                            <li>合成器：多种合成器音色，创造独特电子音乐</li>
+                            <li>采样器：导入外部音频，创建自定义乐器</li>
+                        </ul>
+                        
+                        <h3>专业功能</h3>
+                        <p>MusicMaker 提供专业级的音乐制作功能：</p>
+                        <ul class="feature-list">
+                            <li>音频编辑：剪切、复制、淡入淡出等基础编辑</li>
+                            <li>时间拉伸：改变音频速度而不影响音调</li>
+                            <li>音调校正：自动或手动调整音调</li>
+                            <li>混音控制：EQ、压缩、限制器等专业工具</li>
+                            <li>自动化：参数自动化控制，实现动态效果</li>
+                            <li>项目管理：保存和管理多个音乐项目</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- <div class="description-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">100K+</div>
+                            <div class="stat-label">音乐创作者</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.6</div>
+                            <div class="stat-label">用户评分</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1M+</div>
+                            <div class="stat-label">创作作品</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">音色库</div>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+
+            <!-- 版本更新 -->
+            <section class="app-updates">
+                <h2>版本更新</h2>
+                <div class="updates-list">
+                    <div class="update-item">
+                        <div class="update-date">2024年1月30日</div>
+                        <div class="update-content">
+                            <h4>版本 3.5.0</h4>
+                            <ul>
+                                <li>新增AI智能作曲助手</li>
+                                <li>支持外部MIDI设备连接</li>
+                                <li>优化音频引擎，降低延迟</li>
+                                <li>新增50种虚拟乐器音色</li>
+                                <li>支持云端项目协作</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">2023年12月25日</div>
+                        <div class="update-content">
+                            <h4>版本 3.4.0</h4>
+                            <ul>
+                                <li>新增音频时间拉伸功能</li>
+                                <li>支持VST插件导入</li>
+                                <li>优化MIDI编辑器界面</li>
+                                <li>增加自动和弦识别</li>
+                                <li>修复录音同步问题</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">2023年11月15日</div>
+                        <div class="update-content">
+                            <h4>版本 3.3.0</h4>
+                            <ul>
+                                <li>新增采样器功能</li>
+                                <li>支持音频导入和编辑</li>
+                                <li>优化混音台界面</li>
+                                <li>增加节拍器和节拍同步</li>
+                                <li>提升整体性能和稳定性</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 个人开发者作品集. 保留所有权利.</p>
+            <p><a href="#" class="footer-link">京ICP备12345678号-1</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

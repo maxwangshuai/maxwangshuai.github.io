@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蜗牛的成长工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <img src="images/Logo/logo_128.png" alt="蜗牛的成长工具 Logo" class="logo-image">
+                    <video class="logo-video" muted loop preload="metadata" playsinline webkit-playsinline>
+                        <source src="images/Logo/logovideo_480.mov" type="video/quicktime">
+                        <source src="images/Logo/logovideo_480.mov" type="video/mp4">
+                        <!-- 如果视频无法播放，显示静态图片 -->
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+                <h1 data-i18n="nav-brand">蜗牛的成长工具</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" data-i18n="nav-home">首页</a></li>
+                <li><a href="#apps" data-i18n="nav-apps">我的应用</a></li>
+                <li><a href="#about" data-i18n="nav-about">关于我</a></li>
+                <li><a href="#contact" data-i18n="nav-contact">联系方式</a></li>
+            </ul>
+            <div class="nav-controls">
+                <select class="language-selector" id="languageSelector" aria-label="选择语言">
+                    <option value="zh" data-flag="🇨🇳">中文</option>
+                    <option value="en" data-flag="🇺🇸">English</option>
+                </select>
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 首页英雄区域 -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <!-- TODO_MODIFY: 修改主标题和副标题 -->
+                <h2 class="hero-title" data-i18n="hero-title">✨ 喜欢小而美 ✨</h2>
+                <p class="hero-subtitle" data-i18n="hero-subtitle">🎨 热爱生活、提升效率、享受生活 📱</p>
+                <div class="hero-cta">
+                    <a href="#apps" class="btn btn-primary" data-i18n="hero-cta-primary">🔍 精选产品</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero-cta-secondary">💬 联系我</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <img src="images/hero/slide1.png" alt="场记板 Pro" class="slide-image">
+                    </div>
+                    <div class="slide">
+                        <img src="images/hero/slide2.png" alt="简单时间" class="slide-image">
+                    </div>
+                    <div class="slide">
+                        <img src="images/hero/slide3.png" alt="计分板" class="slide-image">
+                    </div>
+                    <div class="slide-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 应用展示区域 -->
+        <section id="apps" class="apps-section emoji-mosaic">
+            <div class="container">
+                <!-- TODO_MODIFY: 修改作品集标题和描述 -->
+                <h2 class="section-title" data-i18n="apps-title">🎯 精品应用 ✨</h2>
+                <p class="section-subtitle" data-i18n="apps-subtitle">🌟 深度聚焦生活方式、效率工具与影视摄影，每一款产品都精心打造。 🎨</p>
+                
+                <!-- 精选应用 -->
+                <div class="featured-apps">
+                    <h3 class="subsection-title" data-i18n="featured-title">⭐ 精选</h3>
+                    <div class="featured-apps-grid">
+                        <!-- TODO_MODIFY: 精选应用1 - 修改应用名称、图标、描述、统计数据和链接 -->
+                        <div class="featured-app-card" data-app="app1">
+                            <div class="featured-app-icon">
+                                <img src="images/icons/app1-icon.png" alt="场记板 Pro" class="featured-app-icon-img">
+                            </div>
+                            <div class="featured-app-info">
+                                <h3 class="featured-app-title" data-i18n="app1-title">场记板 Pro</h3>
+                                <p class="featured-app-subtitle" data-i18n="app1-subtitle">影视拍摄必备工具</p>
+                                <p class="featured-app-description" data-i18n="app1-description">影视现场专业场记打板,记录每个场景的细节</p>
+                                <!-- <div class="app-stats">
+                                    <span class="stat">⭐ 4.8</span>
+                                    <span class="stat">📥 25K+</span>
+                                    <span class="stat">💬 800+</span>
+                                </div> -->
+                                <a href="app1.html" class="featured-app-link" data-i18n="learn-more">📖 详细了解</a>
+                            </div>
+                        </div>
+                        
+                        <!-- TODO_MODIFY: 精选应用2 - 修改应用名称、图标、描述、统计数据和链接 -->
+                        <div class="featured-app-card" data-app="app2">
+                            <div class="featured-app-icon">
+                                <img src="images/icons/app2-icon.png" alt="简单时间" class="featured-app-icon-img">
+                            </div>
+                            <div class="featured-app-info">
+                                <h3 class="featured-app-title" data-i18n="app2-title">简单时间</h3>
+                                <p class="featured-app-subtitle" data-i18n="app2-subtitle">微光护眼多彩主题全屏时钟</p>
+                                <p class="featured-app-description" data-i18n="app2-description">让时间更有温度。支持多种主题色彩、护眼模式、全屏显示，为您的生活空间增添美感，是桌面装饰和时间管理的完美结合。</p>
+                                <!-- <div class="app-stats">
+                                    <span class="stat">⭐ 4.9</span>
+                                    <span class="stat">📥 30K+</span>
+                                    <span class="stat">💬 650+</span>
+                                </div> -->
+                                <a href="app2.html" class="featured-app-link" data-i18n="learn-more">📖 详细了解</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 全部应用 -->
+                <div class="all-apps">
+                    <h3 class="subsection-title" data-i18n="all-apps-title">📱 全部应用</h3>
+                    <div class="apps-grid">
+                        <!-- TODO_MODIFY: 应用1 - 修改应用名称、图标、副标题、标签和链接 -->
+                        <div class="app-card" data-app="app1">
+                            <div class="app-icon">
+                                <img src="images/icons/app1-icon.png" alt="场记板 Pro" class="app-icon-img">
+                            </div>
+                            <div class="app-info">
+                                <h3 class="app-title" data-i18n="app1-title">场记板 Pro</h3>
+                                <p class="app-subtitle" data-i18n="app1-subtitle">影视拍摄必备工具</p>
+                                <div class="app-tags">
+                                    <span class="tag" data-i18n="tag-filmmaking">影视制作</span>
+                                    <span class="tag" data-i18n="tag-productivity">效率工具</span>
+                                </div>
+                                <a href="app1.html" class="app-link" data-i18n="more-info">🔗 了解更多</a>
+                            </div>
+                        </div>
+
+                        <!-- TODO_MODIFY: 应用2 - 修改应用名称、图标、副标题、标签和链接 -->
+                        <div class="app-card" data-app="app2">
+                            <div class="app-icon">
+                                <img src="images/icons/app2-icon.png" alt="简单时间" class="app-icon-img">
+                            </div>
+                            <div class="app-info">
+                                <h3 class="app-title" data-i18n="app2-title">简单时间</h3>
+                                <p class="app-subtitle" data-i18n="app2-subtitle">微光护眼多彩主题全屏时钟</p>
+                                <div class="app-tags">
+                                    <span class="tag" data-i18n="tag-lifestyle">生活方式</span>
+                                    <span class="tag" data-i18n="tag-desktop">桌面工具</span>
+                                </div>
+                                <a href="app2.html" class="app-link" data-i18n="more-info">🔗 了解更多</a>
+                            </div>
+                        </div>
+
+                        <!-- TODO_MODIFY: 应用3 - 修改应用名称、图标、副标题、标签和链接 -->
+                        <div class="app-card" data-app="app3">
+                            <div class="app-icon">
+                                <img src="images/icons/app3-icon.png" alt="计分板" class="app-icon-img">
+                            </div>
+                            <div class="app-info">
+                                <h3 class="app-title" data-i18n="app3-title">计分板</h3>
+                                <p class="app-subtitle" data-i18n="app3-subtitle">比赛记分工具，支持2到6个参赛者</p>
+                                <div class="app-tags">
+                                    <span class="tag" data-i18n="tag-sports">体育</span>
+                                    <span class="tag" data-i18n="tag-utility">实用工具</span>
+                                </div>
+                                <a href="app3.html" class="app-link" data-i18n="more-info">🔗 了解更多</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于我 -->
+        <section id="about" class="about-section emoji-mosaic">
+            <div class="container">
+                <!-- TODO_MODIFY: 修改开发者标题和个人介绍 -->
+                <h2 class="section-title" data-i18n="about-title">👨‍💻 关于开发者 ✨</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p data-i18n="about-description-1">🚀 我是一名专注于生活方式、效率工具和影视摄影领域的独立开发者，致力于通过技术提升人们的生活品质和工作效率。</p>
+                        <p data-i18n="about-description-2">💡 深耕移动应用开发十余年，现在专注于打造兼具美学设计与实用功能的产品。从生活方式到专业创作工具，每一款应用都承载着对用户体验的极致追求和对生活美学的深度理解。 🎨</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 蜗牛的成长工具. 保留所有权利.</p>
+                <p class="icp-info">
+                    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">陕ICP备2024041843号-2</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

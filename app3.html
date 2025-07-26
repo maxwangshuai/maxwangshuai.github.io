@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app3-detail-title">计分板 - 详细介绍</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="app-detail.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <img src="images/Logo/logo_128.png" alt="蜗牛的成长工具 Logo" class="logo-image">
+                    <video class="logo-video" muted loop preload="metadata" playsinline webkit-playsinline>
+                        <source src="images/Logo/logovideo_480.mov" type="video/quicktime">
+                        <source src="images/Logo/logovideo_480.mov" type="video/mp4">
+                        <!-- 如果视频无法播放，显示静态图片 -->
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+                <h1><a href="index.html" data-i18n="nav-brand">蜗牛的成长工具</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" data-i18n="nav-home">首页</a></li>
+                <li><a href="index.html#apps" data-i18n="nav-apps">我的应用</a></li>
+                <li><a href="index.html#about" data-i18n="nav-about">关于我</a></li>
+                <li><a href="index.html#contact" data-i18n="nav-contact">联系方式</a></li>
+            </ul>
+            <div class="nav-controls">
+                <select class="language-selector" id="languageSelector" aria-label="选择语言">
+                    <option value="zh" data-flag="🇨🇳">中文</option>
+                    <option value="en" data-flag="🇺🇸">English</option>
+                </select>
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="app-detail-main">
+        <!-- 应用头部信息 -->
+        <section class="app-hero">
+            <div class="container">
+                <div class="app-hero-content">
+                    <div class="app-icon-large">
+                        <img src="images/icons/app3-icon.png" alt="计分板" class="app-icon-large-img">
+                    </div>
+                    <div class="app-meta">
+                        <h1 class="app-name" data-i18n="app3-title">计分板</h1>
+                        <p class="app-tagline" data-i18n="app3-subtitle">比赛记分工具，支持2到6个参赛者</p>
+                        <div class="app-badges">
+                            <span class="badge" data-i18n="tag-utility">工具</span>
+                            <span class="badge" data-i18n="tag-sports">体育</span>
+                        </div>
+                        <div class="app-actions">
+                            <a href="https://apps.apple.com/app/%E5%9C%BA%E8%AE%B0%E6%9D%BF-pro-%E5%BD%B1%E8%A7%86%E6%8B%8D%E6%91%84%E5%BF%85%E5%A4%87/id6445955423" target="_blank" rel="noopener" class="btn btn-primary btn-large" data-i18n="download-appstore">App Store 下载</a>
+                            <!-- <a href="#" class="btn btn-secondary btn-large">Google Play 下载</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 应用截图 -->
+        <section class="app-screenshots">
+            <div class="container">
+                <h2 class="section-title" data-i18n="app3-screenshots-title">应用截图</h2>
+                <div class="screenshots-grid">
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/app3/zh/screenshot1.png" alt="简单记分" class="screenshot-img">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/app3/zh/screenshot2.png" alt="多选手支持" class="screenshot-img">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/app3/zh/screenshot3.png" alt="支持计时" class="screenshot-img">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/app3/zh/screenshot4.png" alt="多种主题" class="screenshot-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 应用特性 -->
+        <section class="app-features">
+            <div class="container">
+                <h2 class="section-title" data-i18n="app3-features-title">应用特色</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <h3 data-i18n="app3-feature1-title">简单记分</h3>
+                        <p data-i18n="app3-feature1-desc">简单的记分系统，方便实时记录比赛成绩。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👥</div>
+                        <h3 data-i18n="app3-feature2-title">多选手支持</h3>
+                        <p data-i18n="app3-feature2-desc">可支持2到6个参赛者，多人比赛都支持。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⏳</div>
+                        <h3 data-i18n="app3-feature3-title">支持计时</h3>
+                        <p data-i18n="app3-feature3-desc">可支持倒计时和正计时，方便记录比赛时间。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌓</div>
+                        <h3 data-i18n="app3-feature4-title">多种主题</h3>
+                        <p data-i18n="app3-feature4-desc">支持多种主题，方便在不同环境下使用。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 应用描述 -->
+        <section class="app-description">
+            <div class="container">
+                <div class="description-content">
+                    <div class="description-text">
+                        <h2 data-i18n="app3-about-title">关于这款应用</h2>
+                        <p data-i18n="app3-about-desc1">计分板是一款专为体育比赛和游戏竞技设计的记分工具。应用支持2到6个参赛者同时比赛，提供简洁直观的记分界面和实用的计时功能。</p>
+                        <p data-i18n="app3-about-desc2">无论您是组织家庭游戏、朋友聚会还是小型体育比赛，这款应用都能为您提供专业的记分解决方案。通过简单易用的操作和多样化的主题选择，让比赛记分变得更加轻松有趣。</p>
+                        
+                        <h3 data-i18n="app3-highlights-title">核心功能：</h3>
+                        <ul class="feature-list">
+                            <li data-i18n="app3-highlight-1">支持2-6人同时比赛记分</li>
+                            <li data-i18n="app3-highlight-2">倒计时和正计时功能</li>
+                            <li data-i18n="app3-highlight-3">多种精美主题选择</li>
+                            <li data-i18n="app3-highlight-4">简洁直观的操作界面</li>
+                            <li data-i18n="app3-highlight-5">比赛历史记录保存</li>
+                            <li data-i18n="app3-highlight-6">自定义选手名称功能</li>
+                        </ul>
+                    </div>
+                    <!-- <div class="description-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">25K+</div>
+                            <div class="stat-label">学习者</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.7</div>
+                            <div class="stat-label">用户评分</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">800+</div>
+                            <div class="stat-label">五星评价</div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 版本历史 -->
+        <section class="app-updates">
+            <div class="container">
+                <h2 class="section-title" data-i18n="app3-updates-title">更新日志</h2>
+                <div class="update-timeline">
+                    <div class="update-item">
+                        <div class="update-version" data-i18n="app3-version-latest">v1.3.0</div>
+                        <div class="update-date" data-i18n="app3-update-date-latest">2024年1月25日</div>
+                        <div class="update-content">
+                            <h4 data-i18n="app3-update-title-latest">重要更新</h4>
+                            <ul>
+                                <li data-i18n="app3-update-1">新增6人比赛模式</li>
+                                <li data-i18n="app3-update-2">优化计时器精度</li>
+                                <li data-i18n="app3-update-3">增加比赛历史记录</li>
+                                <li data-i18n="app3-update-4">支持自定义选手名称</li>
+                                <li data-i18n="app3-update-5">修复已知显示问题</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-version" data-i18n="app3-version-prev">v1.2.0</div>
+                        <div class="update-date" data-i18n="app3-update-date-prev">2023年12月20日</div>
+                        <div class="update-content">
+                            <h4 data-i18n="app3-update-title-prev">功能增强</h4>
+                            <ul>
+                                <li data-i18n="app3-update-prev-1">改进记分界面设计</li>
+                                <li data-i18n="app3-update-prev-2">新增多种主题选择</li>
+                                <li data-i18n="app3-update-prev-3">优化应用性能</li>
+                                <li data-i18n="app3-update-prev-4">增加计时器功能</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p data-i18n="footer-copyright">&copy; 2025 蜗牛的成长工具. 保留所有权利.</p>
+                <p class="icp-info">
+                    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">陕ICP备2024041843号-2</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

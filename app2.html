@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app2-detail-title">简单时间 - 详细介绍</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="app-detail.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <img src="images/Logo/logo_128.png" alt="蜗牛的成长工具 Logo" class="logo-image">
+                    <video class="logo-video" muted loop preload="metadata" playsinline webkit-playsinline>
+                        <source src="images/Logo/logovideo_480.mov" type="video/quicktime">
+                        <source src="images/Logo/logovideo_480.mov" type="video/mp4">
+                        <!-- 如果视频无法播放，显示静态图片 -->
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+                <h1><a href="index.html" data-i18n="nav-brand">蜗牛的成长工具</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" data-i18n="nav-home">首页</a></li>
+                <li><a href="index.html#apps" data-i18n="nav-apps">我的应用</a></li>
+                <li><a href="index.html#about" data-i18n="nav-about">关于我</a></li>
+                <li><a href="index.html#contact" data-i18n="nav-contact">联系方式</a></li>
+            </ul>
+            <div class="nav-controls">
+                <select class="language-selector" id="languageSelector" aria-label="选择语言">
+                    <option value="zh" data-flag="🇨🇳">中文</option>
+                    <option value="en" data-flag="🇺🇸">English</option>
+                </select>
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="app-detail-main">
+        <!-- 应用头部信息 -->
+        <section class="app-hero">
+            <div class="container">
+                <div class="app-hero-content">
+                    <div class="app-icon-large">
+                        <img src="images/icons/app2-icon.png" alt="简单时间" class="app-icon-large-img">
+                    </div>
+                    <div class="app-meta">
+                        <h1 class="app-name" data-i18n="app2-title">简单时间</h1>
+                        <p class="app-tagline" data-i18n="app2-subtitle">微光护眼多彩主题全屏时钟</p>
+                        <div class="app-badges">
+                            <span class="badge" data-i18n="tag-utility">工具</span>
+                            <span class="badge" data-i18n="tag-lifestyle">生活方式</span>                       
+                        </div>
+                        <div class="app-actions">
+                            <a href="https://apps.apple.com/app/%E5%9C%BA%E8%AE%B0%E6%9D%BF-pro-%E5%BD%B1%E8%A7%86%E6%8B%8D%E6%91%84%E5%BF%85%E5%A4%87/id6445955423" target="_blank" rel="noopener" class="btn btn-primary btn-large" data-i18n="download-appstore">App Store 下载</a>
+                            <!-- <a href="#" class="btn btn-secondary btn-large">Google Play 下载</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 应用截图 -->
+        <section class="app-screenshots">
+            <div class="container">
+                <h2 class="section-title" data-i18n="app2-screenshots-title">应用截图</h2>
+                <div class="screenshots-grid">
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/app2/zh/screenshot1.png" alt="主界面" class="screenshot-img">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/app2/zh/screenshot2.png" alt="时钟界面" class="screenshot-img">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/app2/zh/screenshot3.png" alt="设置界面" class="screenshot-img">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/app2/zh/screenshot4.png" alt="主题选择" class="screenshot-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 应用特性 -->
+        <section class="app-features">
+            <div class="container">
+                <h2 class="section-title" data-i18n="app2-features-title">应用特色</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <h3 data-i18n="app2-feature1-title">简单易用</h3>
+                        <p data-i18n="app2-feature1-desc">直观的操作方式，无需复杂的学习过程，老少皆宜。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🏆</div>
+                        <h3 data-i18n="app2-feature2-title">护眼模式</h3>
+                        <p data-i18n="app2-feature2-desc">微光护眼设计，长时间使用也不会疲劳，保护您的视力。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👥</div>
+                        <h3 data-i18n="app2-feature3-title">多彩主题</h3>
+                        <p data-i18n="app2-feature3-desc">丰富的主题色彩选择，让时钟界面更符合您的个人喜好。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <h3 data-i18n="app2-feature4-title">全屏显示</h3>
+                        <p data-i18n="app2-feature4-desc">支持全屏时钟显示，为您的桌面增添美感和实用性。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 应用描述 -->
+        <section class="app-description">
+            <div class="container">
+                <div class="description-content">
+                    <div class="description-text">
+                        <h2 data-i18n="app2-about-title">关于这款应用</h2>
+                        <p data-i18n="app2-about-desc1">简单时间是一款专为追求简洁美观的用户设计的时钟应用。应用采用清晰易读的字体和舒适的色彩搭配，让您在任何环境下都能轻松查看时间。</p>
+                        <p data-i18n="app2-about-desc2">应用提供了多种主题和显示模式，支持全屏时钟显示，特别适合作为桌面时钟使用。护眼模式的设计让您长时间使用也不会感到疲劳。</p>
+                        
+                        <h3 data-i18n="app2-highlights-title">应用亮点：</h3>
+                        <ul class="feature-list">
+                            <li data-i18n="app2-highlight-1">极简设计风格，界面清爽美观</li>
+                            <li data-i18n="app2-highlight-2">多种主题色彩，个性化定制</li>
+                            <li data-i18n="app2-highlight-3">护眼模式设计，保护视力健康</li>
+                            <li data-i18n="app2-highlight-4">全屏显示支持，专业时钟体验</li>
+                            <li data-i18n="app2-highlight-5">轻量级应用，占用资源极少</li>
+                        </ul>
+                    </div>
+                    <!-- <div class="description-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">下载量</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.6</div>
+                            <div class="stat-label">用户评分</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1K+</div>
+                            <div class="stat-label">五星评价</div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 版本历史 -->
+        <section class="app-updates">
+            <div class="container">
+                <h2 class="section-title" data-i18n="app2-updates-title">版本更新</h2>
+                <div class="update-timeline">
+                    <div class="update-item">
+                        <div class="update-version" data-i18n="app2-version-latest">v1.2.0</div>
+                        <div class="update-date" data-i18n="app2-update-date-latest">2024年1月20日</div>
+                        <div class="update-content">
+                            <h4 data-i18n="app2-update-title-latest">新功能上线</h4>
+                            <ul>
+                                <li data-i18n="app2-update-1">新增夜间模式主题</li>
+                                <li data-i18n="app2-update-2">优化时钟显示精度</li>
+                                <li data-i18n="app2-update-3">修复已知显示问题</li>
+                                <li data-i18n="app2-update-4">增加更多字体选择</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-version" data-i18n="app2-version-prev">v1.1.0</div>
+                        <div class="update-date" data-i18n="app2-update-date-prev">2023年12月15日</div>
+                        <div class="update-content">
+                            <h4 data-i18n="app2-update-title-prev">功能优化</h4>
+                            <ul>
+                                <li data-i18n="app2-update-prev-1">改进时钟显示效果</li>
+                                <li data-i18n="app2-update-prev-2">新增多彩主题选择</li>
+                                <li data-i18n="app2-update-prev-3">支持全屏显示模式</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p data-i18n="footer-copyright">&copy; 2025 蜗牛的成长工具. 保留所有权利.</p>
+                <p class="icp-info">
+                    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">陕ICP备2024041843号-2</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
