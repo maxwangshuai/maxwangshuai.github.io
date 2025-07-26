@@ -2,21 +2,87 @@
 function initTheme() {
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.querySelector('.theme-icon');
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const autoThemeToggle = document.getElementById('autoThemeToggle');
+    
+    // 检查是否启用了自动主题切换
+    const autoThemeEnabled = localStorage.getItem('autoTheme') !== 'false';
+    let currentTheme;
+    
+    if (autoThemeEnabled) {
+        // 根据系统时间自动设置主题
+        currentTheme = getThemeByTime();
+        localStorage.setItem('theme', currentTheme);
+    } else {
+        // 使用保存的主题或默认为浅色主题
+        currentTheme = localStorage.getItem('theme') || 'light';
+    }
     
     // 设置初始主题
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme, themeIcon);
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme, themeIcon);
+    
+    // 设置自动主题复选框的初始状态
+    if (autoThemeToggle) {
+        autoThemeToggle.checked = autoThemeEnabled;
+    }
     
     // 主题切换事件
     themeToggle.addEventListener('click', function() {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
+        // 手动切换时禁用自动主题
+        localStorage.setItem('autoTheme', 'false');
+        if (autoThemeToggle) {
+            autoThemeToggle.checked = false;
+        }
+        
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme, themeIcon);
     });
+    
+    // 自动主题切换复选框事件
+    if (autoThemeToggle) {
+        autoThemeToggle.addEventListener('change', function() {
+            const isAutoEnabled = autoThemeToggle.checked;
+            localStorage.setItem('autoTheme', isAutoEnabled.toString());
+            
+            if (isAutoEnabled) {
+                // 启用自动主题时，立即根据时间设置主题
+                const timeBasedTheme = getThemeByTime();
+                document.documentElement.setAttribute('data-theme', timeBasedTheme);
+                localStorage.setItem('theme', timeBasedTheme);
+                updateThemeIcon(timeBasedTheme, themeIcon);
+            }
+        });
+    }
+    
+    // 如果启用了自动主题，每分钟检查一次时间
+    if (autoThemeEnabled) {
+        setInterval(() => {
+            // 只有在自动主题仍然启用时才更新
+            if (localStorage.getItem('autoTheme') !== 'false') {
+                const timeBasedTheme = getThemeByTime();
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                
+                if (timeBasedTheme !== currentTheme) {
+                    document.documentElement.setAttribute('data-theme', timeBasedTheme);
+                    localStorage.setItem('theme', timeBasedTheme);
+                    updateThemeIcon(timeBasedTheme, themeIcon);
+                }
+            }
+        }, 60000); // 每分钟检查一次
+    }
+}
+
+// 根据时间获取主题
+function getThemeByTime() {
+    const now = new Date();
+    const hour = now.getHours();
+    
+    // 6:00-18:00 为白天模式，18:00-6:00 为夜间模式
+    return (hour >= 6 && hour < 18) ? 'light' : 'dark';
 }
 
 function updateThemeIcon(theme, iconElement) {
@@ -653,8 +719,9 @@ function getTranslations() {
             'about-description-2': '💡 深耕移动应用开发十余年，现在专注于打造兼具美学设计与实用功能的产品。从生活方式到专业创作工具，每一款应用都承载着对用户体验的极致追求和对生活美学的深度理解。 🎨',
             // 联系方式
             'contact-title': '📞 联系方式 ✨',
-            'contact-button': '📧 发送邮件',
-            'contact-description': '💌 欢迎通过邮件与我联系，分享您的想法、建议或合作意向。我会尽快回复您的邮件。',
+        'contact-button': '📧 发送邮件',
+        'contact-description': '💌 欢迎通过邮件与我联系，分享您的想法、建议或合作意向。我会尽快回复您的邮件。',
+        'auto-theme-label': '🕐 自动',
             'contact-wechat-label': '💬 微信:',
             // App1详情页面
             'app1-detail-title': '场记板 Pro - 详细介绍',
@@ -875,8 +942,9 @@ function getTranslations() {
             'about-description-2': '💡 With over a decade of experience in mobile app development, I now focus on creating products that combine aesthetic design with practical functionality. From lifestyle to professional creative tools, every app embodies the ultimate pursuit of user experience and deep understanding of life aesthetics. 🎨',
             // Contact
             'contact-title': '📞 Contact ✨',
-            'contact-button': '📧 Send Email',
-            'contact-description': '💌 Feel free to contact me via email to share your thoughts, suggestions, or collaboration ideas. I will reply to your email as soon as possible.',
+        'contact-button': '📧 Send Email',
+        'contact-description': '💌 Feel free to contact me via email to share your thoughts, suggestions, or collaboration ideas. I will reply to your email as soon as possible.',
+        'auto-theme-label': '🕐 Auto',
             'contact-wechat-label': '💬 WeChat:',
             // App1 detail page
             'app1-detail-title': 'Clapperboard Pro - Detailed Introduction',

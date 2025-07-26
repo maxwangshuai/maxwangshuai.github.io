@@ -1036,3 +1036,72 @@ body {
     max-width: 600px;
     margin: 0 auto;
 }
+
+/* 自动主题切换样式 */
+.auto-theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.auto-theme-toggle input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--text-secondary);
+    border-radius: 3px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.auto-theme-toggle input[type="checkbox"]:checked {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.auto-theme-toggle input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: -2px;
+    left: 1px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.auto-theme-toggle input[type="checkbox"]:hover {
+    border-color: #2563eb;
+    transform: scale(1.1);
+}
+
+.auto-theme-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.auto-theme-toggle:hover .auto-theme-label {
+    color: var(--text-primary);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .auto-theme-toggle {
+        margin-left: 8px;
+    }
+    
+    .auto-theme-label {
+        font-size: 12px;
+    }
+    
+    .auto-theme-toggle input[type="checkbox"] {
+        width: 14px;
+        height: 14px;
+    }
+}
