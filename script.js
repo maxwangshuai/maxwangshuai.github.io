@@ -577,7 +577,7 @@ function setLanguage(language) {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = translations[language][key];
             } else {
-                element.textContent = translations[language][key];
+                element.innerHTML = translations[language][key];
             }
         });
     });
@@ -613,6 +613,8 @@ function updateAppStoreLinks(language) {
         appKey = 'app2';
     } else if (currentPath.includes('app3.html')) {
         appKey = 'app3';
+    } else if (currentPath.includes('app4.html')) {
+        appKey = 'app4';
     }
     
     // 从翻译数据中获取对应应用和语言的下载链接
@@ -669,6 +671,23 @@ function updateScreenshotPaths(language) {
                                 newFileName = fileName.replace('.svg', '.png');
                             }
                         }
+                    } else if (appName === 'app4') {
+                        // app4使用特定命名格式: ap_cn_6.5_x.jpg / ap_en_6.5_x.jpg
+                        // 使用data-index属性或文件名中的数字
+                        let imgIndex = 1;
+                        // 匹配文件名末尾的数字，避免匹配到版本号中的数字(如6.5中的6)
+                        const match = fileName.match(/_(\d+)\.jpg$/);
+                        if (match) {
+                            imgIndex = match[1];
+                        } else if (img.getAttribute('data-index')) {
+                            imgIndex = parseInt(img.getAttribute('data-index')) + 1;
+                        }
+                        
+                        if (language === 'zh') {
+                            newFileName = `ap_cn_6.5_${imgIndex}.jpg`;
+                        } else {
+                            newFileName = `ap_en_6.5_${imgIndex}.jpg`;
+                        }
                     } else {
                         // app2和app3使用screenshot数字.png格式
                         newFileName = fileName.replace('.svg', '.png');
@@ -712,6 +731,17 @@ function getTranslations() {
             'app2-description': '这是一个全屏幕电子时钟。它不仅是一个时钟，它还可以让你的手机或者 iPad 在日常生活中变成一个精致摆件。在夜晚它的效果更加优秀；它会让你感受到宁静，你可以修改时钟颜色和时钟字体来搭配你设备的配色，新增多种字体选择，进一步个性化你的时钟显示。',
             'app3-title': '计分板',
             'app3-subtitle': '简单直观的计分板应用，适用于各种体育活动和游戏竞赛',
+            'app4-title': '时光记',
+            'app4-subtitle': '轻松统计时间分配，简单精力分配',
+            'app4-description': '告别无效忙碌！用时光记找到时间浪费的根源，用「数据洞察」匹配最佳精力状态。',
+            'privacy-policy': '隐私政策',
+            'app4-privacy-title': '时光记 - 隐私政策',
+            'app4-privacy-h1': '时光记 隐私政策',
+            'app4-privacy-intro': '时光记非常注重用户隐私保护，本隐私政策将告知您我们如何收集和使用您的个人信息。',
+            'app4-privacy-collect-title': '收集哪些信息',
+            'app4-privacy-collect-desc': '我们不收集您的任何信息，您的任何有关时间记录的内容输入都在本地存储。',
+            'app4-privacy-use-title': '如何使用您的个人信息',
+            'app4-privacy-use-desc': '我们不使用您的任何个人信息，请放心使用。',
             // 标签
             'tag-filmmaking': '影视制作',
             'tag-productivity': '效率工具',
@@ -781,6 +811,7 @@ function getTranslations() {
             'app1-download-url': 'https://apps.apple.com/cn/app/场记板-pro-影视拍摄必备/id6445955423',
             'app2-download-url': 'https://apps.apple.com/cn/app/简单时间-微光护眼多彩主题全屏时钟/id1486062288',
             'app3-download-url': 'https://apps.apple.com/cn/app/计分板/id6502262077',
+            'app4-download-url': 'https://apps.apple.com/app/id6755352189',
             'footer-copyright': '© 2025 蜗牛的成长工具. 保留所有权利.',
             
             // App2 页面翻译
@@ -925,6 +956,65 @@ function getTranslations() {
             'app3-update-title-101': '问题修复',
             'app3-update-101-1': '修复了一些错误，兼容性更好',
 
+            // App4 页面翻译
+            'app4-title': '时光记',
+            'app4-subtitle': '轻松统计时间分配，简单精力分配',
+            'app4-detail-title': '时光记 - 详细介绍',
+            'app4-feature1-title': '轻量记录',
+            'app4-feature1-desc': '一键启停，卡片式设计，零学习成本。专注限制最多同时记录2件事，灵活补录适配突发场景。',
+            'app4-feature2-title': '数据洞察',
+            'app4-feature2-desc': '不仅看时间花在哪，更看精力耗多少。全维度视图复盘，直观图表一眼找到优化方向。',
+            'app4-feature3-title': '精力匹配',
+            'app4-feature3-desc': '科学量化每日精力，可视化消耗恢复过程。智能预警低精力状态，个性化适配你的精力节奏。',
+            'app4-feature4-title': '色彩标签',
+            'app4-feature4-desc': '快速区分时间价值：绿色恢复、红色消耗、蓝色增益、橙色琐事，优化更有方向。',
+            'app4-about-desc1': '告别无效忙碌！用时光记找到时间最优解！总觉得时间不够用？忙了一天却没产出？想提升效率却不知道从哪下手？你不需要 “为了记录而记录”——TimeLog（时光记）的核心，是帮你通过「轻量记录」找到时间浪费的根源，用「数据洞察」匹配最佳精力状态，最终实现 “时间用在刀刃上” 的高效生活。',
+            'app4-why-title': '为什么你需要它？',
+            'app4-why-desc': '不是所有记录都有意义，能帮你优化时间的才是关键：',
+            'app4-why-1': '想高效学习：知道自己在哪类学习任务上耗时最长，调整方法提升效率',
+            'app4-why-2': '想平衡工作：避开低效忙碌，在精力最好的时候做核心工作，减少加班',
+            'app4-why-3': '想优化生活：发现隐藏的时间浪费（如刷手机太久），腾出时间留给热爱',
+            'app4-who-title': '适合谁用？',
+            'app4-who-1': '学生党：优化学习时间，找到最适合自己的学习节奏，提升成绩',
+            'app4-who-2': '职场人：告别无效加班，平衡工作与生活，用更少时间出更多成果',
+            'app4-who-3': '自律者：精准掌控时间分配，实现目标不费力，成为更好的自己',
+            'app4-highlights-title': '产品亮点',
+            'app4-highlights-desc': '原生开发・无广告无冗余・极简操作流程不用再被时间推着走！立即下载--时光记，从 “记录时间” 到 “掌控时间”，让每一分钟都产生真正的价值～',
+            'app4-update-date-100': '2024年12月29日',
+            'app4-update-title-100': '首次发布',
+            'app4-update-100-desc': '时光记正式发布！开始记录你的时间与精力。',
+            'app4-download-url': 'https://apps.apple.com/app/id6755352189',
+            'privacy-policy': '隐私政策',
+            'app4-privacy-title': 'TimeLog AI 隐私政策',
+            'app4-privacy-h1': 'TimeLog AI 隐私政策',
+            'app4-privacy-effective-date': '生效日期：2026年2月8日',
+            'app4-privacy-intro': '欢迎使用 TimeLog AI（以下简称“本App”）。我们高度重视您的隐私与数据安全，本政策将清晰说明我们如何收集、使用、存储和保护您的相关数据，以及您对自身数据享有的权利。使用本App，即表示您已阅读、理解并同意本政策的全部内容。',
+            'app4-privacy-section1-title': '一、数据收集与使用',
+            'app4-privacy-section1-intro': '我们遵循“正当、合法、必要”原则，仅收集您主动提供或使用本App功能所产生的数据，不收集任何个人身份信息（如姓名、手机号、邮箱、位置等），所有数据均用于实现本App核心功能，无其他用途。',
+            'app4-privacy-section1-1-title': '1. 收集的数据类型',
+            'app4-privacy-section1-1-list': '<li><strong>时间记录数据：</strong>您主动在App内记录的任务名称、时长、时间标签等相关数据；</li><li><strong>精力管理数据：</strong>您主动输入或App生成的精力分值、精力状态、精力消耗与恢复记录等；</li><li><strong>操作数据：</strong>您使用本App的基础操作记录（如开启/关闭记录、编辑/删除数据、导出CSV文件、开启小组件/灵动岛、开启iCloud同步等），用于保障功能正常运行；</li><li><strong>成就数据：</strong>您在使用本App过程中达成的时间成就相关记录，用于展示您的使用成果。</li>',
+            'app4-privacy-section1-2-title': '2. 数据使用范围',
+            'app4-privacy-section1-2-list': '<li>用于生成清晰可视图表，为您展示时间分配与精力变化情况；</li><li>用于本地AI分析，为您提供个性化时间优化建议（所有AI分析均在您的设备本地完成，不涉及数据上传）；</li><li>用于实现小组件、灵动岛的数据展示，方便您快速查看核心信息；</li><li>用于支持CSV文件导出功能，为您提供数据备份与自主管理便利；</li><li>用于实现时间成就养成功能，记录您的使用进度与成果。</li>',
+            'app4-privacy-section2-title': '二、数据存储',
+            'app4-privacy-section2-intro': '本App的所有用户数据均存储在您的设备本地，不上传至我们的服务器或任何第三方服务器，您对自身数据拥有完全控制权，具体存储方式如下：',
+            'app4-privacy-section2-list': '<li><strong>本地存储：</strong>所有时间、精力、操作及成就数据，均加密存储在您的设备本地（iOS端使用系统Keychain加密存储，保障数据安全）；</li><li><strong>iCloud同步：</strong>若您主动开启iCloud同步功能，您的本地数据将同步至您个人的iCloud账户，同步过程受Apple iCloud安全机制保护，采用加密传输与存储方式，我们无法访问、查看或管理您的iCloud同步数据。iCloud数据的存储与保护遵循Apple官方的iCloud数据安全规范，您可通过Apple设备设置管理iCloud同步的数据，开启高级数据保护可进一步提升同步数据的安全性。</li><li><strong>数据留存：</strong>数据将一直留存于您的设备本地，直至您主动删除数据或卸载本App（卸载App后，本地数据将被清除；iCloud同步的数据，将留存于您的iCloud账户，由您自行管理删除）。</li>',
+            'app4-privacy-section3-title': '三、数据共享与披露',
+            'app4-privacy-section3-intro': '我们严格保护您的隐私，不会将您的任何数据（本地存储或iCloud同步的数据）共享、转让、披露给任何第三方，除非符合以下情形：',
+            'app4-privacy-section3-list': '<li>经您明确同意，为实现本App功能所需（如CSV文件导出，数据仅导出至您的设备，由您自行决定是否分享给第三方）；</li><li>依据相关法律法规、法律程序、司法机关或行政主管部门的要求，必须披露的数据；</li><li>为保护您的合法权益、公共利益或本App的合法权益，在必要且合理的范围内披露的数据。</li>',
+            'app4-privacy-section4-title': '四、您的权利',
+            'app4-privacy-section4-intro': '您对自身存储在设备本地及iCloud同步的所有数据，享有完全的控制权，可随时行使以下权利：',
+            'app4-privacy-section4-list': '<li><strong>查看权：</strong>随时在本App内查看所有已记录的时间、精力、成就等相关数据；</li><li><strong>编辑/删除权：</strong>随时编辑、删除任何不需要的数据，删除后的数据无法恢复（iCloud同步的数据，删除本地数据后，可通过iCloud同步删除其他设备上的对应数据）；</li><li><strong>导出权：</strong>随时通过CSV文件导出功能，将数据导出至您的设备，自主备份与管理；</li><li><strong>控制权：</strong>随时开启或关闭iCloud同步功能，自主决定是否同步数据；随时卸载本App，清除本地所有数据。</li>',
+            'app4-privacy-section5-title': '五、数据安全',
+            'app4-privacy-section5-intro': '我们采取行业通用的安全措施，全力保护您的本地数据安全，降低数据泄露风险：',
+            'app4-privacy-section5-list': '<li><strong>本地数据加密：</strong>iOS端使用系统Keychain加密存储数据，防止设备被非法访问时的数据泄露；</li><li><strong>无数据上传：</strong>所有数据均存储在您的设备本地，不进行任何服务器上传，从源头降低数据泄露风险；</li><li><strong>设备安全适配：</strong>若检测到您的设备处于越狱状态，将提示您存在数据安全风险，建议您在非越狱设备上使用本App，进一步保障数据安全；</li><li><strong>技术防护：</strong>持续优化App安全性能，防范恶意攻击、数据窃取等安全风险。</li>',
+            'app4-privacy-section5-note': '请注意：本地存储无绝对安全，若您的设备丢失、被非法访问或破解，可能导致数据泄露，我们不承担因此产生的相关责任，请您妥善保管您的设备。',
+            'app4-privacy-section6-title': '六、政策更新',
+            'app4-privacy-section6-content': '随着本App功能更新或相关法律法规调整，我们可能会对本隐私政策进行修订。修订后的政策将在本App内以弹窗、通知等形式告知您，若您继续使用本App，即表示您同意修订后的隐私政策；若您不同意，可停止使用本App并删除相关数据。',
+            'app4-privacy-section7-title': '七、联系我们',
+            'app4-privacy-section7-intro': '若您对本隐私政策有任何疑问、建议，或需要协助处理数据相关问题，请通过以下方式联系我们：',
+            'app4-privacy-section7-contact': '联系邮箱：cotree@foxmail.com',
+            'app4-privacy-section7-reply': '我们将在收到您的反馈后，尽快为您回复并处理。',
+
         },
         en: {
             'page-title': 'Snail\'s Growth Tools',
@@ -953,6 +1043,9 @@ function getTranslations() {
             'app2-description': 'This is a fullscreen digital clock that transforms your phone or iPad into an elegant decorative piece. With excellent night mode effects, customizable colors and fonts, plus new features like Pomodoro timer, countdown, and flashlight - making it your perfect study and work companion.',
             'app3-title': 'Scoreboard',
             'app3-subtitle': 'Simple and Intuitive Scoreboard App for Various Sports and Gaming Competitions',
+            'app4-title': 'TimeLog - Track Daily Moments',
+            'app4-subtitle': 'Log & Analyze Time & Energy',
+            'app4-description': 'Stop Busywork! Find Your Optimal Time Flow with TimeLog. Feel like time slips away? TimeLog helps you find the root of time waste through lightweight logging.',
             // Tags
             'tag-filmmaking': 'Filmmaking',
             'tag-productivity': 'Productivity',
@@ -1022,6 +1115,7 @@ function getTranslations() {
             'app1-download-url': 'https://apps.apple.com/us/app/clapperboard-scene-tracker/id6445955423',
             'app2-download-url': 'https://apps.apple.com/us/app/justyclock-pomodoro-timer/id1486062288',
             'app3-download-url': 'https://apps.apple.com/us/app/scoreboard/id6502262077',
+            'app4-download-url': 'https://apps.apple.com/app/id6755352189',
             'footer-copyright': '© 2025 Snail\'s Growth Tools. All rights reserved.',
             
             // App2 page translations
@@ -1165,6 +1259,64 @@ function getTranslations() {
             'app3-update-date-101': 'Feb 19, 2024',
             'app3-update-title-101': 'Bug Fixes',
             'app3-update-101-1': 'Some bugs have been fixed and compatibility is better',
+            
+            // App4 page translations
+            'app4-title': 'TimeLog - Track Daily Moments',
+            'app4-subtitle': 'Log & Analyze Time & Energy',
+            'app4-detail-title': 'TimeLog - Detailed Introduction',
+            'app4-feature1-title': 'Lightweight Tracking',
+            'app4-feature1-desc': 'One-Tap Start/Stop, Card-based design, zero learning curve. Max 2 simultaneous events to keep you focused.',
+            'app4-feature2-title': 'Data Insights',
+            'app4-feature2-desc': 'Not only track "where time goes" but also "how much energy you spend". Multi-Dimensional Views and Intuitive Charts.',
+            'app4-feature3-title': 'Energy Matching',
+            'app4-feature3-desc': 'Scientific Energy Quantification, visualize "consumption-recovery" process. Smart Alert when energy drops.',
+            'app4-feature4-title': 'Color-Coded Tags',
+            'app4-feature4-desc': 'Distinguish Time Value Quickly: Green=Restore, Red=Consume, Blue=Grow, Orange=Chores.',
+            'app4-about-desc1': 'Stop Busywork! Find Your Optimal Time Flow with TimeLog. Feel like time slips away? Busy all day but no real progress? Want to be more productive but don’t know where to start? You don’t need to track time just for tracking’s sake — TimeLog’s core is to help you find the root of time waste through lightweight logging, match your best energy state with data insights, and finally achieve an efficient life where “every minute counts”.',
+            'app4-why-title': 'Why Do You Need It?',
+            'app4-why-desc': 'Not all tracking is meaningful — only the one that optimizes your time matters:',
+            'app4-why-1': 'For effective study: Discover which tasks take most of your time, adjust methods to boost efficiency',
+            'app4-why-2': 'For work-life balance: Avoid unproductive busyness, tackle core work when energy is peak',
+            'app4-why-3': 'For better life: Uncover hidden time wasters, free up time for what you love',
+            'app4-who-title': 'Who Is It For?',
+            'app4-who-1': 'Students: Optimize study time, find your best learning rhythm, improve grades',
+            'app4-who-2': 'Professionals: Say goodbye to unproductive overtime, balance work and life',
+            'app4-who-3': 'Self-Disciplined People: Precisely control time allocation, achieve goals effortlessly',
+            'app4-highlights-title': 'Product Highlights',
+            'app4-highlights-desc': 'SwiftUI Native · No Ad · Minimalist Workflow. Stop being pushed by time! Download TimeLog now, move from "tracking time" to "mastering time".',
+            'app4-update-date-100': 'Dec 29, 2024',
+            'app4-update-title-100': 'Initial Release',
+            'app4-update-100-desc': 'TimeLog officially released! Start tracking your time and energy.',
+            'privacy-policy': 'Privacy Policy',
+            'app4-privacy-title': 'TimeLog AI Privacy Policy',
+            'app4-privacy-h1': 'TimeLog AI Privacy Policy',
+            'app4-privacy-effective-date': 'Effective Date: February 8, 2026',
+            'app4-privacy-intro': 'Welcome to TimeLog AI (hereinafter referred to as "this App"). We highly value your privacy and data security. This policy clearly explains how we collect, use, store, and protect your data, as well as your rights regarding your data. By using this App, you agree that you have read, understood, and accepted all the contents of this policy.',
+            'app4-privacy-section1-title': 'I. Data Collection and Use',
+            'app4-privacy-section1-intro': 'We follow the principles of "justifiable, legal, and necessary" and only collect data that you actively provide or that is generated by your use of the App\'s functions. We do not collect any personally identifiable information (such as name, phone number, email, location, etc.). All data is used solely to implement the core functions of this App and for no other purpose.',
+            'app4-privacy-section1-1-title': '1. Types of Data Collected',
+            'app4-privacy-section1-1-list': '<li><strong>Time Log Data:</strong> Task names, durations, time tags, and other related data you actively record in the App;</li><li><strong>Energy Management Data:</strong> Energy scores, energy status, energy consumption, and recovery records you actively input or that are generated by the App;</li><li><strong>Operation Data:</strong> Basic operation records of your use of this App (such as starting/stopping records, editing/deleting data, exporting CSV files, enabling widgets/Dynamic Island, enabling iCloud sync, etc.), used to ensure the normal operation of functions;</li><li><strong>Achievement Data:</strong> Records related to time achievements you reach while using this App, used to display your usage results.</li>',
+            'app4-privacy-section1-2-title': '2. Scope of Data Use',
+            'app4-privacy-section1-2-list': '<li>To generate clear visual charts to show you time allocation and energy changes;</li><li>For local AI analysis to provide personalized time optimization suggestions (all AI analysis is completed locally on your device and involves no data upload);</li><li>To implement data display for widgets and Dynamic Island, making it convenient for you to quickly view core information;</li><li>To support the CSV file export function, providing you with data backup and autonomous management convenience;</li><li>To implement the time achievement development function, recording your usage progress and results.</li>',
+            'app4-privacy-section2-title': 'II. Data Storage',
+            'app4-privacy-section2-intro': 'All user data of this App is stored locally on your device and is not uploaded to our servers or any third-party servers. You have complete control over your data. The specific storage methods are as follows:',
+            'app4-privacy-section2-list': '<li><strong>Local Storage:</strong> All time, energy, operation, and achievement data are encrypted and stored locally on your device (iOS uses the system Keychain for encrypted storage to ensure data security);</li><li><strong>iCloud Sync:</strong> If you actively enable the iCloud sync function, your local data will be synced to your personal iCloud account. The sync process is protected by Apple iCloud security mechanisms, using encrypted transmission and storage. We cannot access, view, or manage your iCloud sync data. The storage and protection of iCloud data follow Apple\'s official iCloud data security specifications. You can manage iCloud synced data through Apple device settings. Enabling Advanced Data Protection can further enhance the security of synced data.</li><li><strong>Data Retention:</strong> Data will remain locally on your device until you actively delete it or uninstall this App (after uninstalling the App, local data will be cleared; iCloud synced data will remain in your iCloud account, managed and deleted by you).</li>',
+            'app4-privacy-section3-title': 'III. Data Sharing and Disclosure',
+            'app4-privacy-section3-intro': 'We strictly protect your privacy and will not share, transfer, or disclose any of your data (locally stored or iCloud synced data) to any third party, unless under the following circumstances:',
+            'app4-privacy-section3-list': '<li>With your explicit consent, as required to implement App functions (such as CSV file export, where data is exported only to your device, and you decide whether to share it with third parties);</li><li>Data that must be disclosed in accordance with relevant laws and regulations, legal procedures, or requirements of judicial or administrative authorities;</li><li>Data disclosed within a necessary and reasonable scope to protect your legitimate rights and interests, public interests, or the legitimate rights and interests of this App.</li>',
+            'app4-privacy-section4-title': 'IV. Your Rights',
+            'app4-privacy-section4-intro': 'You have complete control over all data stored locally on your device and synced to iCloud, and you can exercise the following rights at any time:',
+            'app4-privacy-section4-list': '<li><strong>Right to Access:</strong> View all recorded time, energy, achievement, and other related data within this App at any time;</li><li><strong>Right to Edit/Delete:</strong> Edit or delete any unwanted data at any time. Deleted data cannot be recovered (for iCloud synced data, after deleting local data, corresponding data on other devices can be deleted via iCloud sync);</li><li><strong>Right to Export:</strong> Export data to your device via the CSV file export function at any time for autonomous backup and management;</li><li><strong>Right to Control:</strong> Enable or disable the iCloud sync function at any time to autonomously decide whether to sync data; uninstall this App at any time to clear all local data.</li>',
+            'app4-privacy-section5-title': 'V. Data Security',
+            'app4-privacy-section5-intro': 'We take industry-standard security measures to fully protect your local data security and reduce data leakage risks:',
+            'app4-privacy-section5-list': '<li><strong>Local Data Encryption:</strong> iOS uses system Keychain to encrypt and store data, preventing data leakage when the device is illegally accessed;</li><li><strong>No Data Upload:</strong> All data is stored locally on your device without any server upload, reducing data leakage risks from the source;</li><li><strong>Device Security Adaptation:</strong> If your device is detected to be in a jailbroken state, you will be alerted to data security risks. It is recommended to use this App on non-jailbroken devices to further ensure data security;</li><li><strong>Technical Protection:</strong> Continuously optimize App security performance to prevent malicious attacks, data theft, and other security risks.</li>',
+            'app4-privacy-section5-note': 'Please note: Local storage is not absolutely secure. If your device is lost, illegally accessed, or cracked, it may lead to data leakage. We do not assume relevant responsibilities arising from this. Please keep your device safe.',
+            'app4-privacy-section6-title': 'VI. Policy Updates',
+            'app4-privacy-section6-content': 'With the update of App functions or adjustments to relevant laws and regulations, we may revise this Privacy Policy. The revised policy will be notified to you in the App via pop-ups, notifications, etc. If you continue to use this App, it means you agree to the revised Privacy Policy; if you do not agree, you can stop using this App and delete relevant data.',
+            'app4-privacy-section7-title': 'VII. Contact Us',
+            'app4-privacy-section7-intro': 'If you have any questions, suggestions regarding this Privacy Policy, or need assistance with data-related issues, please contact us via the following method:',
+            'app4-privacy-section7-contact': 'Contact Email: cotree@foxmail.com',
+            'app4-privacy-section7-reply': 'We will reply and handle your feedback as soon as possible after receiving it.',
 
         }
     };
