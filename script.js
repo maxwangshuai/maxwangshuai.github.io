@@ -812,7 +812,7 @@ function getTranslations() {
             'app2-download-url': 'https://apps.apple.com/cn/app/简单时间-微光护眼多彩主题全屏时钟/id1486062288',
             'app3-download-url': 'https://apps.apple.com/cn/app/计分板/id6502262077',
             'app4-download-url': 'https://apps.apple.com/app/id6755352189',
-            'footer-copyright': '© 2025 蜗牛的成长工具. 保留所有权利.',
+            'footer-copyright': '© 2026 蜗牛的成长工具. 保留所有权利.',
             
             // App2 页面翻译
             'app2-detail-title': '简时 - 详细介绍',
@@ -980,6 +980,9 @@ function getTranslations() {
             'app4-who-3': '自律者：精准掌控时间分配，实现目标不费力，成为更好的自己',
             'app4-highlights-title': '产品亮点',
             'app4-highlights-desc': '原生开发・无广告无冗余・极简操作流程不用再被时间推着走！立即下载--时光记，从 “记录时间” 到 “掌控时间”，让每一分钟都产生真正的价值～',
+            'app4-update-date-101': '2026年3月28日',
+            'app4-update-title-101': '界面优化',
+            'app4-update-101-desc': '优化了首页的样式，让界面看起来更清爽。',
             'app4-update-date-100': '2026年2月9日',
             'app4-update-title-100': '首次发布',
             'app4-update-100-desc': '时光记正式发布！开始记录你的时间与精力。',
@@ -1143,7 +1146,7 @@ function getTranslations() {
             'app2-download-url': 'https://apps.apple.com/us/app/justyclock-pomodoro-timer/id1486062288',
             'app3-download-url': 'https://apps.apple.com/us/app/scoreboard/id6502262077',
             'app4-download-url': 'https://apps.apple.com/app/id6755352189',
-            'footer-copyright': '© 2025 Snail\'s Growth Tools. All rights reserved.',
+            'footer-copyright': '© 2026 Snail\'s Growth Tools. All rights reserved.',
             
             // App2 page translations
             'app2-detail-title': 'ZenTime - Detailed Introduction',
@@ -1311,6 +1314,9 @@ function getTranslations() {
             'app4-who-3': 'Self-Disciplined People: Precisely control time allocation, achieve goals effortlessly',
             'app4-highlights-title': 'Product Highlights',
             'app4-highlights-desc': 'SwiftUI Native · No Ad · Minimalist Workflow. Stop being pushed by time! Download TimeLog now, move from "tracking time" to "mastering time".',
+            'app4-update-date-101': 'Mar 28, 2026',
+            'app4-update-title-101': 'UI Improvements',
+            'app4-update-101-desc': 'The style of the homepage has been optimized, making the interface look more elegant and clean.',
             'app4-update-date-100': 'Feb 9, 2026',
             'app4-update-title-100': 'Initial Release',
             'app4-update-100-desc': 'TimeLog officially released! Start tracking your time and energy.',
